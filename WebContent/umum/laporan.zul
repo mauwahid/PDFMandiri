@@ -1,0 +1,29 @@
+<groupbox mold="3d" apply="pdf.mandiri.action.LaporanAction">
+<caption label="Laporan"></caption>
+<groupbox id="gbox_anchor">
+	<div align="right" >
+	<hbox>
+		<label value="Anchor"></label>
+		<combobox name="cb_anchor" id="cb_anchor" value=""></combobox>
+	
+		<label value="Distributor"></label>
+		<combobox name="cb_distributor" id="cb_distributor" value=""></combobox>
+	
+		<label value="Kanwil"></label>
+		<combobox name="cb_kanwil" id="cb_kanwil" value=""></combobox>
+		<label value="Area"></label>
+		<combobox name="cb_anchor" id="cb_area" value=""></combobox>
+		<label value="Status"></label>
+		<combobox name="cb_anchor" id="cb_status" value=""></combobox>
+	
+		<button label="cetak" forward="onClick=onCetak"></button>
+	
+	</hbox>
+	</div>
+</groupbox>
+<panel>
+	<panelchildren>																
+	</panelchildren>
+</panel>
+ </groupbox>
+ 

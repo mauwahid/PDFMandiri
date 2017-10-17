@@ -1,0 +1,36 @@
+<groupbox mold="3d" apply="pdf.mandiri.action.pusat.UploadDataAction">
+<caption label="Upload File"></caption>
+<groupbox id="gbox_anchor">
+	<div align="center" >
+	<vbox width="50%">
+		<grid>
+			<columns>
+			<column></column>
+			<column></column>
+			</columns>
+			<rows>
+				<row>
+					<label value="Pilih File CSV"></label>
+					<button label="Pilih" id="btn_upload" upload="true" forward="onUpload=onUploadData(event)"></button>
+				</row>
+				<row>
+					<label value="Nama File"></label>
+					<label id="file_name"></label>
+				</row>
+			
+				<row>
+					<label value="Extract Ke DB"></label>
+					<button label="RUN" id="btn_ekstrak" forward="onClick=onExtract" mold="trendy"/>
+				</row>
+			</rows>
+		</grid>
+		
+	</vbox>
+	</div>
+</groupbox>
+<panel>
+	<panelchildren>																
+	</panelchildren>
+</panel>
+ </groupbox>
+ 

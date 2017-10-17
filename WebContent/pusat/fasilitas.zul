@@ -1,0 +1,105 @@
+<groupbox mold="3d" apply="pdf.mandiri.action.FasilitasAction">
+<caption label="Fasilitas"></caption>
+<groupbox id="gbox_anchor">
+	<div align="right" >
+	<hbox>
+		<label value="Cari"></label>
+		<textbox  id="txt_cari"></textbox>
+		<button label="Cari" forward="onClick=onSearch" mold="trendy"/>
+		<button label="Refresh" forward="onClick=onRefresh" mold="trendy"/>		
+		<button label="Tambah" forward="onClick=onAdd" mold="trendy"/>
+	</hbox>
+	</div>
+</groupbox>
+<panel>
+	<panelchildren>																
+		<listbox id="list_kreditType" visible="true" style="z" mold="paging" pageSize="13" >
+			<listhead visible="true">											
+				<listheader label="Jenis Fasilitas"/>
+				<listheader label="Description"/>
+				<listheader label=""/>
+											
+			</listhead>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Name"></listcell>
+				<listcell label="Cash Loan"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Name"></listcell>
+				<listcell label="Cash Loan"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Name"></listcell>
+				<listcell label="Cash Loan"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Name"></listcell>
+				<listcell label="Cash Loan"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Name"></listcell>
+				<listcell label="Cash Loan"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Name"></listcell>
+				<listcell label="Cash Loan"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Name"></listcell>
+				<listcell label="Cash Loan"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+				
+			</listbox>
+	</panelchildren>
+</panel>
+ </groupbox>
+ 

@@ -1,0 +1,73 @@
+<?page title="Value Chain Corporate Banking" contentType="text/html;charset=UTF-8"?>
+<zk >
+	<zscript>
+<![CDATA[
+	 if(session.getAttribute("pengguna")==null)
+	 {
+		 Executions.forward("../index.zul");
+	 }
+]]>
+		
+	
+</zscript>
+	<borderlayout id="b"  >
+		<north id="n" size="20%" mold="default" border="0" >
+			<div >
+				<div height="60%" width="100%">
+					<image src="../images/header.png" height="80%"  width="100%"/>
+		   		</div>
+		   		<div height="40%" width="100%">
+		   		 <menubar autodrop="true" droppable="true"
+					focus="true">
+					<menuitem label="Home" target="iframe" href="../pusat/to_kanwil.zul"
+						autocheck="true">
+					</menuitem>
+					<menuitem label="Entry Data" target="iframe" href="../pusat/to_kanwil.zul"/>
+					<menuitem label="Upload File" target="iframe" href="../pusat/form_upload.zul"></menuitem>
+					<menu label="Setting">
+						<menupopup>
+							<menuitem label="Anchor"  target="iframe" href="../pusat/anchor.zul"/>
+							<menuitem label="Cabang" target="iframe" href="../pusat/area.zul"/>
+							<menuitem label="BUC" target="iframe" href="../pusat/buc.zul"/>
+							<menuitem label="Customer Type" target="iframe" href="../pusat/customer.zul"/>
+							<menuitem label="Distributor" target="iframe" href="../pusat/distributor.zul"/>
+							<menuitem label="Jenis Fasilitas"  target="iframe" href="../pusat/fasilitas.zul"/> 
+							<menuitem label="Kanwil" target="iframe" href="../pusat/kanwil.zul"/>
+							<menuitem label="Status" target="iframe" href="../pusat/status.zul"/>
+						</menupopup>
+					</menu>
+						<menuitem label="User Profile" target="iframe" href="../pusat/user_profile.zul"/>
+					<menuitem label="Laporan" target="iframe" href="../pusat/laporan.zul"/>
+					<menuitem label="Logout" onClick="onLogout()"
+						id="log_out" autocheck="true" >
+					</menuitem>
+
+				</menubar>
+				</div>
+			</div>
+		</north>
+		<!--Sidebar-->
+
+		<center flex="true" autoscroll="true" >
+
+			<iframe id="iframe" name="iframe" src="../pusat/to_kanwil.zul"
+				width="100%" height="100%" scrolling="true"  
+				style="border: 1px solid gray;">
+
+			</iframe>
+
+		</center>
+		<south height="5%">
+			<toolbar>
+				<label
+					value="Copyright 2013. PT. Bank Mandiri (Persero) Tbk. All Rights Reserved." />
+			</toolbar>
+		</south>
+	</borderlayout>
+	<zscript><![CDATA[
+	public void onLogout() {
+		Executions.sendRedirect("../umum");
+		
+	}
+]]></zscript>
+</zk>

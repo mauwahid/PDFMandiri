@@ -1,0 +1,87 @@
+<groupbox mold="3d" apply="pdf.mandiri.action.BUCDistributorAction">
+<caption label="BUC Distributor"></caption>
+<groupbox id="gbox_anchor">
+	<div align="right" >
+	<hbox>
+		<label value="Cari"></label>
+		<textbox  id="txt_cari"></textbox>
+		<button label="Cari" forward="onClick=onSearch"/>
+		<button label="Refresh" forward="onClick=onRefresh"/>		
+		<button label="Tambah" forward="onClick=onAdd"/>
+	</hbox>
+	</div>
+</groupbox>
+<panel>
+	<panelchildren>																
+		<listbox id="list_bucDistributor" visible="true" style="z" mold="paging" pageSize="13" >
+			<listhead visible="true">											
+				<listheader label="No" sort="none" width="" />
+				<listheader label="Kode BUC"/>
+				<listheader label="Nama Unit Kerja"/>
+				<listheader label=""/>
+											
+			</listhead>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Unit Satu"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Unit Satu"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Unit Satu"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Unit Satu"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Unit Satu"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Unit Satu"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			</listbox>
+	</panelchildren>
+</panel>
+ </groupbox>

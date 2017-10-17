@@ -1,0 +1,84 @@
+<groupbox mold="3d" apply="pdf.mandiri.action.KirimEmailAction">
+<caption label="Kirim Email"></caption>
+<groupbox id="gbox_anchor">
+	<div align="right" >
+	<hbox>
+		<label value="Cari"></label>
+		<textbox  id="txt_cari"></textbox>
+		<button label="Cari" forward="onClick=onSearch"/>
+		<button label="Refresh" forward="onClick=onRefresh"/>		
+	</hbox>
+	</div>
+</groupbox>
+<panel>
+	<panelchildren>																
+		<listbox id="list_kirimEmail" visible="true" style="z" mold="paging" pageSize="13" >
+			<listhead visible="true">											
+				<listheader label="Id" sort="none" width="" />
+				<listheader label="Dari"/>
+				<listheader label="Kepada"/>
+				<listheader label="Subject"/>
+				<listheader label=""/>
+											
+			</listhead>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Cus Satu"></listcell>
+				<listcell label="Cus Type"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Cus Satu"></listcell>
+				<listcell label="Cus Type"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Cus Satu"></listcell>
+				<listcell label="Cus Type"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Cus Satu"></listcell>
+				<listcell label="Cus Type"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+			<listitem>
+				<listcell label="53535"></listcell>
+				<listcell label="Cus Satu"></listcell>
+				<listcell label="Cus Type"></listcell>
+				<listcell>
+					<hlayout>
+						<button label="Edit" onClick="onAdd()"/>
+						<button label="Delete" onClick="onAdd()"/>
+					</hlayout>
+				</listcell>
+			</listitem>	
+				
+			</listbox>
+	</panelchildren>
+</panel>
+ </groupbox>
+ 

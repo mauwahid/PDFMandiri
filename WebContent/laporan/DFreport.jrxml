@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5f2b4df5-7283-42f6-b60f-09310ea9a64c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:\\Mandiri\\report\\report V.2.11.10-beta\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="kan_id" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="area_id" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="anc_id" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fasilitas_id" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="buc_id" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="header" class="java.lang.Object">
+		<defaultValueExpression><![CDATA["header.png"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT *
+FROM
+(SELECT
+kanwil_id
+FROM distributionfinance df
+WHERE
+(CASE WHEN $P{kan_id} IS NOT NULL THEN df.kanwil_id=$P{kan_id} ELSE true END) AND
+(CASE WHEN $P{area_id} IS NOT NULL THEN df.area_id=$P{area_id} ELSE true END) AND
+(CASE WHEN $P{anc_id} IS NOT NULL THEN df.anchor_id=$P{anc_id} ELSE true END) AND
+where df.fasilitasString like %$P{fasilitas_id} AND
+(CASE WHEN $P{buc_id} IS NOT NULL THEN df.buc_id=$P{buc_id} ELSE true END)
+GROUP BY kanwil_id
+ORDER BY kanwil_id
+)AS B,
+(
+SELECT
+SUM(limitdf) AS jml_limit,
+SUM(outstandinglist) AS jml_outstanding,
+COUNT(limitdf) AS jml_count
+FROM distributionfinance df
+WHERE
+(CASE WHEN $P{kan_id} IS NOT NULL THEN df.kanwil_id=$P{kan_id} ELSE true END) AND
+(CASE WHEN $P{area_id} IS NOT NULL THEN df.area_id=$P{area_id} ELSE true END) AND
+(CASE WHEN $P{anc_id} IS NOT NULL THEN df.anchor_id=$P{anc_id} ELSE true END) AND
+df.fasilitasString like '%$P!{fasilitas_id}%' AND
+(CASE WHEN $P{buc_id} IS NOT NULL THEN df.buc_id=$P{buc_id} ELSE true END)
+) AS A]]>
+	</queryString>
+	<field name="kanwil_id" class="java.lang.Long"/>
+	<field name="jml_limit" class="java.lang.Long"/>
+	<field name="jml_outstanding" class="java.lang.Long"/>
+	<field name="jml_count" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<image>
+				<reportElement uuid="506b3364-550f-4931-8c60-f46097d15bbd" x="0" y="0" width="802" height="59"/>
+				<imageExpression><![CDATA[$P{header}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement uuid="9b58c5c1-5bbb-480a-a18b-0a9cee18406f" x="251" y="0" width="95" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[BUC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7f53056d-4b28-40a3-bc07-c6a5d33aab4f" x="110" y="0" width="141" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Cabang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d2f33100-f4e4-4e25-8927-a6f9c6d1faff" x="0" y="0" width="110" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Nama Kanwil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="95658caf-4f51-4b53-8028-cff16d58cd0d" x="601" y="0" width="101" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Limit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="18ae0793-fcaf-4e1d-adcf-ba19524b3ade" x="702" y="0" width="100" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Outstanding]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2ae28eb3-866b-480e-892b-c0d2302a4cb9" x="346" y="0" width="85" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="565369ca-7616-468f-bb9d-07f715f2ca8c" x="431" y="0" width="85" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Potensi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7a8f2c8e-9b9e-4776-95da-015b0d4d8451" x="516" y="0" width="85" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Fasilitas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="29c04888-675d-49b6-b21f-c81d921515cc" x="0" y="0" width="200" height="30"/>
+				<subreportParameter name="buc_id">
+					<subreportParameterExpression><![CDATA[$P{buc_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="area_id">
+					<subreportParameterExpression><![CDATA[$P{area_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="anc_id">
+					<subreportParameterExpression><![CDATA[$P{anc_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="kan_id">
+					<subreportParameterExpression><![CDATA[$F{kanwil_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="fasilitas_id">
+					<subreportParameterExpression><![CDATA[$P{fasilitas_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "DFreport_subreport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="20">
+			<textField>
+				<reportElement uuid="e5df0cfd-22fb-4717-a4db-bd699955f391" mode="Opaque" x="110" y="0" width="491" height="20" backcolor="#999999"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jml_count}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="dbecad84-ae18-4c9d-952b-b5b6a213c75d" mode="Opaque" x="0" y="0" width="110" height="20" backcolor="#999999"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="ca113a32-5989-4fe9-82de-8a10681d8267" mode="Opaque" x="601" y="0" width="101" height="20" backcolor="#999999"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new java.text.DecimalFormat("#,##0").format($F{jml_limit})).replaceAll(",",".")]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="dcc4d9ad-4b05-4a3d-a32e-22557e89b7a1" mode="Opaque" x="702" y="0" width="100" height="20" backcolor="#999999"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new java.text.DecimalFormat("#,##0").format($F{jml_outstanding})).replaceAll(",",".")]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

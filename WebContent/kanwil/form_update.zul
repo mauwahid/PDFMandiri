@@ -1,0 +1,57 @@
+			<grid apply="">
+					<columns>
+						<column width="30%"></column>
+						<column width="70%"></column>
+					</columns>
+					<rows>
+						<row>
+							Anchor
+							<label value="my Anchor"/>
+						</row>
+						<row>
+							Distributor
+							<label value="my Anchor"/>
+						</row>
+						<row>
+							Kanwil
+							<label value="my Anchor"/>
+						</row>
+						<row>
+							Business Unit
+							<label value="my Anchor"/>
+						</row>
+						
+						<row>
+							Kredit Type
+							<label value="my Anchor"/>
+						</row>
+						
+						<row>
+							Customer Type
+							<label value="my Anchor"/>
+						</row>
+						<row>
+						Status
+							<hlayout>
+							<combobox>
+								<comboitem>Target</comboitem>
+								<comboitem>Collect</comboitem>
+								<comboitem>NAK</comboitem>
+							
+							
+							</combobox>
+							</hlayout>
+						</row>
+						<row>
+							Date
+							<textbox />
+						</row>
+						<row>
+							<label>Aksi</label>
+							<hbox>
+								<button label="Input" id="btn_input" forward="onClick=onSave" mold="trendy"/>
+								<button label="Batalkan" forward="onClick=onCancel" mold="trendy"/>
+							</hbox>
+						</row>
+					</rows>
+				</grid>

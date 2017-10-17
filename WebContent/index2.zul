@@ -1,0 +1,36 @@
+<?page title="Pusat" contentType="text/html;charset=UTF-8"?>
+<zk><borderlayout height="100%" width="100%">
+	<north title="Distributor Financing System">
+		<toolbar id="toolbar_menu">
+			<toolbarbutton image="images/setting-anchor.png"  target="iframe" href="pusat/anchor.zul"/>
+			<toolbarbutton image="images/setting-buc.png" target="iframe" href="pusat/buc.zul"/>
+			<toolbarbutton image="images/setting-credit-type.png"  target="iframe" href="pusat/kredit.zul"/> 
+			<toolbarbutton image="images/setting-customer-type.png" target="iframe" href="pusat/customer.zul"/>
+			<toolbarbutton image="images/setting-distributor.png" target="iframe" href="pusat/distributor.zul"/>
+			<toolbarbutton image="images/setting-kanwil.png" target="iframe" href="pusat/kanwil.zul"/>
+			<toolbarbutton image="images/setting-status.png" target="iframe" href="pusat/status.zul"/>
+			<toolbarbutton image="images/sentto-kanwil.png" target="iframe" href="pusat/to_kanwil.zul"/>
+			<toolbarbutton image="images/setting-user-role.png"  target="iframe" href="pusat/pengguna.zul"/>
+			<toolbarbutton image="images/" label="Laporan" target="iframe" href="pusat/laporan.zul"/>
+			<toolbarbutton image="images/" label="Area" target="iframe" href="pusat/laporan.zul"/>
+			<toolbarbutton image="images/logout.png"  onClick="onLogout()"/>
+		
+		</toolbar>
+	</north>
+	<center border="none" autoscroll="false" >
+		<div style="" vflex="1">
+				<iframe id="iframe" name="iframe" src=""
+				width="100%" height="100%" scrolling="true"
+				style="border: 1px solid gray;">
+			
+			</iframe>
+		</div>
+	</center>		
+</borderlayout>
+<zscript><![CDATA[
+	public void onLogout() {
+		Executions.sendRedirect("./login.zul");
+		
+	}
+]]></zscript>
+</zk>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="HibernateSessionFactory">
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/valuechain</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root123</property>
+		
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+			
+		<property name="hibernate.format_sql">false</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.connection.autocommit">false</property>
+		<property name="connection.pool_size">2000</property>
+		<property name="current_session_context_class">thread</property>
+		<!--
+			<property
+			name="hibernate.cache.provider_class">org.hibernate.cache.OSCacheProvider</property>
+		-->
+		<property name="hibernate.use_identifier_rollback">true</property>
+		<property name="hibernate.transaction.auto_close_session">false</property>
+
+		<!-- Connection auto reconnect after long inactivity -->
+		<property name="connection.autoReconnect">true</property>
+		<property name="connection.autoReconnectForPools">true</property>
+		<property name="connection.is-connection-validation-required">true</property>
+		<mapping class="pdf.mandiri.domain.Anchor" />
+		<mapping class="pdf.mandiri.domain.BUCAnchor" />
+		<mapping class="pdf.mandiri.domain.Distributor" />
+		<mapping class="pdf.mandiri.domain.CustomerType" />
+		<mapping class="pdf.mandiri.domain.Kanwil" />
+		<mapping class="pdf.mandiri.domain.Status" />
+		<mapping class="pdf.mandiri.domain.DistributionFinance" />
+		<mapping class="pdf.mandiri.domain.LogStatus" />
+		<mapping class="pdf.mandiri.domain.Pengguna" />
+		<mapping class="pdf.mandiri.domain.Area" />
+		<mapping class="pdf.mandiri.domain.KirimEmail" />
+		<mapping class="pdf.mandiri.domain.UploadDF" />
+				
+	</session-factory>
+</hibernate-configuration>

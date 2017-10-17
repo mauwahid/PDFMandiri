@@ -1,0 +1,33 @@
+<groupbox mold="3d" apply="pdf.mandiri.action.PenggunaAction">
+<caption label="Pengguna"></caption>
+<groupbox id="gbox_anchor">
+	<div align="right" >
+	<hbox>
+		<label value="Cari"></label>
+		<textbox  id="txt_cari"></textbox>
+		<button label="Cari" forward="onClick=onSearch"/>
+		<button label="Refresh" forward="onClick=onRefresh"/>		
+		<button label="Tambah" forward="onClick=onAdd"/>
+	</hbox>
+	</div>
+</groupbox>
+<panel>
+	<panelchildren>																
+		<listbox id="list_pengguna" visible="true" style="z" mold="paging" pageSize="13" >
+			<listhead visible="true">											
+				<listheader label="Username"/>
+				<listheader label="Nama"/>
+				<listheader label="Alamat"/>
+				<listheader label="Email"/>
+				<listheader label="Kanwil"/>
+				<listheader label="Role"/>
+				<listheader label=""/>
+											
+			</listhead>	
+
+				
+			</listbox>
+	</panelchildren>
+</panel>
+ </groupbox>
+ 

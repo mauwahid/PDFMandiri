@@ -1,0 +1,60 @@
+<groupbox mold="3d" apply="pdf.mandiri.action.LaporanAction">
+<caption label="Laporan"></caption>
+<groupbox id="gbox_anchor">
+	<div align="center" >
+	<vbox width="50%">
+		<grid>
+			<columns>
+			<column></column>
+			<column></column>
+			</columns>
+			<rows>
+				<row>
+					<label value="Kanwil"></label>
+					<combobox name="cb_kanwil" id="cb_kanwil" value=""></combobox>
+		
+				</row>
+				<row>
+					<label value="Cabang"></label>
+					<combobox name="cb_area" id="cb_area" value=""></combobox>
+				</row>
+				<row>
+					<label value="Anchor"></label>
+					<combobox name="cb_anchor" id="cb_anchor" value="" ></combobox>
+				</row>
+				<row>
+					<label value="Fasilitas"></label>
+					<textbox name="tb_fasilitas" id="tb_fasilitas" value="" ></textbox>
+				</row>
+					<row>
+					<label value="BUC"></label>
+					<combobox name="cb_buc" id="cb_buc" value=""></combobox>
+	
+				</row>
+							<row>
+					<label value="Simpan Sebagai :"></label>
+					<combobox name="cb_saveAs" id="cb_saveAs" >
+						<comboitem label="PDF" ></comboitem>
+						<comboitem label="EXCEL" ></comboitem>
+					</combobox>
+	
+				</row>
+				<row>
+				<label></label>
+				<hbox>
+				<button label="Simpan" forward="onClick=onDownload" mold="trendy"></button>
+				</hbox>
+				
+				</row>
+			</rows>
+		</grid>
+		
+	</vbox>
+	</div>
+</groupbox>
+<panel>
+	<panelchildren>																
+	</panelchildren>
+</panel>
+ </groupbox>
+ 

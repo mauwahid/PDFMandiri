@@ -1,0 +1,8 @@
+<window width="80%" title="Session Timeout" border="normal">
+	<vbox>
+Session Timeout.
+This is normally caused by timeout, opening too many Web pages, or rebooting
+the server.\n
+click here >> <a href="corporate:8080/valuechain" >Home</a> 
+	</vbox>
+</window>

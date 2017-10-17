@@ -1,0 +1,52 @@
+<?page title="Value Chain Corporate Banking" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<zscript>
+<![CDATA[
+	/*  if(session.getAttribute("user_login")==null)
+	 {
+	 Executions.forward("../index.zul");
+	 }*/
+]]>
+		
+	
+</zscript>
+	<borderlayout id="b"  width="100%" height="100%">
+		<north id="n" size="20%" mold="default" border="0">
+			<div >
+				<div height="60%" width="100%">
+					<image src="../images/header.png" height="80%"  width="100%"/>
+		   		</div>
+		   		<div height="40%" width="100%">
+		   			 <menubar autodrop="true" droppable="true"
+					focus="true">
+					<menuitem label="Distribution Finance" target="iframe" href="distri_finance.zul"/>
+					<menuitem label="Login"  href="../login.zul"/>
+				</menubar>
+		   		</div>
+			</div>
+		</north>
+		<!--Sidebar-->
+
+		<center flex="true" autoscroll="true">
+
+			<iframe id="iframe" name="iframe" src="distri_finance.zul"
+				width="100%" height="100%" scrolling="true" visible="true"
+				style="border: 1px solid gray;" >
+
+			</iframe>
+
+		</center>
+		<south height="5%">
+			<toolbar>
+				<label
+					value="Copyright 2013. PT. Bank Mandiri (Persero) Tbk. All Rights Reserved." />
+			</toolbar>
+		</south>
+	</borderlayout>
+	<zscript><![CDATA[
+	public void onLogout() {
+		Executions.sendRedirect("./login.zul");
+		
+	}
+]]></zscript>
+</zk>

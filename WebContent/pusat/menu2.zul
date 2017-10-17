@@ -1,0 +1,61 @@
+<?page title="Admin" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<zscript>
+<![CDATA[
+	/*  if(session.getAttribute("user_login")==null)
+	 {
+	 Executions.forward("../index.zul");
+	 }*/
+]]>
+		
+	
+</zscript>
+	<borderlayout id="b" height="100%">
+		<north id="n" size="20%" mold="default" border="0">
+
+			<div>
+				<image src="../images/header-new.jpg"  height="80%" width="100%"/>
+
+				<menubar autodrop="true" droppable="true"
+					focus="true">
+						<menuitem label="Home" href="index.zul"
+						autocheck="true" target="iframe">
+					</menuitem>
+					<menuitem label="Anchor" target="iframe" href="anchor.zul"/>
+					<menuitem label="BUC" target="iframe" href="buc.zul"/>
+					<menuitem label="Customer" target="iframe" href="customer.zul"/>
+					<menuitem label="Distributor" target="iframe" href="distributor.zul"/>
+					<menuitem label="Kanwil" target="iframe" href="kanwil.zul"/>
+					<menuitem label="Kredit" target="iframe" href="kredit.zul"/>
+					<menuitem label="Status" target="iframe" href="status.zul"/>
+					
+					<menuitem label="Logout" href="" target="iframe"/>
+				
+				</menubar>
+			</div>
+		</north>
+		<!--Sidebar-->
+
+		<center flex="true">
+
+			<iframe id="iframe" name="iframe" src="gambar_utama.zul"
+				width="100%" height="100%" scrolling="true"
+				style="border: 1px solid gray;">
+
+			</iframe>
+
+		</center>
+		<south height="5%">
+			<toolbar>
+				<label	value="Bank Mandiri @2013" />
+			</toolbar>
+		</south>
+	</borderlayout>
+	<zscript><![CDATA[
+	public void onLogout() {
+		session.removeAttribute("user_login");
+		Executions.sendRedirect("../");
+		
+	}
+]]></zscript>
+</zk>

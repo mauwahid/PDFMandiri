@@ -1,0 +1,39 @@
+			<grid apply="">
+					<columns>
+						<column width="30%"></column>
+						<column width="70%"></column>
+					</columns>
+					<rows>
+						<row>
+							Nama
+							<textbox id="text_jur" value="" width="200px"></textbox>
+						</row>
+						<row>
+							Grup Nasabah
+							<textbox id="" value="" width="200px"></textbox>
+						</row>
+						<row>
+							Grup Pengelola	
+							<textbox id="" value="" width="200px"></textbox>
+						</row>
+						<row>
+							RM
+							<textbox id="" value="" width="200px"></textbox>
+						</row>
+						<row>
+							Sales
+							<textbox id="" value="" width="200px"></textbox>
+						</row>
+						<row>
+							Rep Sales Officer
+							<textbox id="" value="" width="200px"></textbox>
+						</row>
+						<row>
+							<label>Aksi</label>
+							<hbox>
+								<button label="Input" id="btn_input" forward="onClick=onSave"/>
+								<button label="Batalkan" forward="onClick=onCancel"/>
+							</hbox>
+						</row>
+					</rows>
+				</grid>

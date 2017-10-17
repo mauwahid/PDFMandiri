@@ -1,0 +1,23 @@
+			<grid apply="">
+					<columns>
+						<column width="30%"></column>
+						<column width="70%"></column>
+					</columns>
+					<rows>
+						<row>
+							Kode BUC
+							<textbox id="text_jur" value="" width="200px"></textbox>
+						</row>
+						<row>
+							Nama Unit Kerja
+							<textbox id="" value="" width="200px"></textbox>
+						</row>
+						<row>
+							<label>Aksi</label>
+							<hbox>
+								<button label="Input" id="btn_input" forward="onClick=onSave"/>
+								<button label="Batalkan" forward="onClick=onCancel"/>
+							</hbox>
+						</row>
+					</rows>
+				</grid>

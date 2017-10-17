@@ -1,0 +1,6 @@
+<zscript><![CDATA[
+            
+            Executions.sendRedirect("/umum/");
+                  
+           // Executions.forward("login.zul"); 
+                  ]]></zscript>

@@ -1,0 +1,61 @@
+<groupbox mold="3d" apply="pdf.mandiri.action.ToKanwilAction" width="100%">
+<caption label="Distribution Finance"></caption>
+<groupbox id="gbox_anchor">
+	<div align="center">
+	<div align="right" >
+	<hbox>
+	<label value="Kanwil"></label>
+	<combobox name="cb_kanwil" id="cb_kanwil" value="" readonly="true"></combobox>
+	<label value="Anchor"></label>
+	<combobox name="cb_anchor" id="cb_anchor" value="" readonly="true"></combobox>
+	<label value="BUC"></label>
+	<combobox name="cb_buc" id="cb_buc" value="" readonly="true"></combobox>
+	<label value="Cabang"></label>
+	<combobox name="cb_area" id="cb_area" value="" readonly="true"></combobox>
+	<label value="Fasilitas"></label>
+	<textbox name="tb_fasilitas" id="tb_fasilitas" value="" readonly="false"></textbox>
+		<button label="Filter" forward="onClick=onSearch" mold="trendy" />
+		<button label="Refresh" forward="onClick=onRefresh" mold="trendy"/>		
+		<button label="Tambah" forward="onClick=onAdd" mold="trendy"/>
+		<button label="Kirim Email" forward="onClick=onSendMail" mold="trendy"/>
+		
+	</hbox>
+	
+	</div>
+	</div>
+</groupbox>
+<panel>
+	<panelchildren>																
+		<listbox id="list_to_kanwil" visible="true"  style="font-size:10" mold="paging"  pageSize="13"  sizedByContent="false" checkmark="true" multiple="true" width="100%">
+			<listhead style="">
+				<listheader label="Kanwil" width="7%" style="font-size:10"/>
+				<listheader label="Cabang"/>
+				<listheader label="Anchor"/>
+				<listheader label="Distributor"/>
+				<listheader label="BUC" width="6%"/>
+				<listheader label="Status" width="6%"/>
+				<listheader label="Tanggal" width="8%"/>
+				<listheader label="Limit (Rp)" align="right" width="8%"/>
+				<listheader label="Outstanding (Rp)" align="right" width="8%"/>
+				<listheader label=""  width="10%"/>
+			
+			</listhead>
+			<listfoot>
+				<listfooter label="Total"></listfooter>
+				<listfooter label=""></listfooter>
+				<listfooter label=""></listfooter>
+				<listfooter label=""></listfooter>
+				<listfooter label=""></listfooter>
+				<listfooter label=""></listfooter>
+				<listfooter label=""></listfooter>
+				<listfooter label="" id="limit_count" align="right"></listfooter>
+				<listfooter label="" id="outstanding_count" align="right"></listfooter>
+				<listfooter label=""></listfooter>
+			
+			</listfoot>
+			</listbox>
+	</panelchildren>
+</panel>
+
+ </groupbox>
+ 
